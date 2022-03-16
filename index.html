@@ -42,7 +42,7 @@
 
         * {
             box-sizing: border-box;
-            border: 0.1px solid red;
+            border: 2px solid white
         }
 
         .center {
@@ -51,6 +51,18 @@
 
         .container {
             height: 80%;
+        }
+
+        #side,
+        #sides {
+            width: 100%;
+            height: 100%;
+            font-size: 203px;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding-top: 50%;
+            padding-bottom: auto;
         }
     </style>
     <title>Ocrebbs dice oll</title>
@@ -64,25 +76,28 @@
             <h1 style="margin-left: 10px;">Dice Roll</h1>
         </div>
         <div>
-            <h1 style="margin-left: 10px;"><i>By Ocrebb</i></h1>
+            <h1 style="margin-left: 10px;"><i>By Oliver</i></h1>
         </div>
         <div>
             <button onclick="location.href='https://ocrebb776.github.io/8-letter-olidle/'" class="button f">Try My 8
                 letter worlde</button>
         </div>
         <!-- row two-->
-        <div></div>
+        <div id="side">
+        </div>
         <div>
             <h1 class="center">Roll The Dice!!</h1>
             <div class="center container">
-                <img id="dice" src="all.svg" width="50%" height="88%" style="padding-top: 6px;border-radius: 10px;"><br>
+                <img id="dice" src="all.svg" width="50%" height="auto"
+                    style="padding-top: 6px;border-radius: 10px;"><br>
             </div>
         </div>
-        <div></div>
+        <div id="sides"></div>
         <!-- row three -->
-        <div>all creddits fo to ocrebb </div>
+        <div>all creddits fo to me</div>
         <div><button onclick="roll()" class="button f" style="border-radius:10px;">roll</button></div>
-        <div><button onclick="location.href='aa.html'" class="button f" style="border-radius:10px;">roll</button></div>
+        <div><button onclick="location.href='https://github.com/ocrebb776/dice-roll'" class="f"
+                style="border-radius:10px;">Look At code</button></div>
 </body>
 <script>
     let x
@@ -90,6 +105,8 @@
     function roll() {
         x = Math.floor(Math.random() * 6) + 1
         document.getElementById('dice').src = dice[x - 1]
+        document.getElementById('side').innerHTML = x
+        document.getElementById('sides').innerHTML = x
         document.getElementById('dice').style.backgroundColor = "red"
 
     }
